@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-SsuenProj2::Application.load_tasks
+TeamNote::Application.load_tasks
