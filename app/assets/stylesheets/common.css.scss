@@ -1,0 +1,62 @@
+body {
+  border-top: 10px solid #1abc9c;
+}
+
+.logo {
+  background: #1abc9c;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.6em;
+  position: absolute;
+  top: -10px;
+  padding: 20px 20px 15px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  z-index: 2;
+  &:hover, &:active {
+    padding-top: 25px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.notice {
+  float: left;
+  margin-top: 15px;
+  margin-left: 160px;
+  color: #468847;
+  font-size: 1.2em;
+}
+
+.navlink {
+  float: right;
+  margin-top: 15px;
+  font-size: 1.2em;
+  &:hover {
+    text-decoration: underline;
+    .circle {
+      background: #2c3e50;
+    }
+  }
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: #34495e;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  line-height: 20px;
+  float: left;
+  margin-top: 2.5px;
+  margin-right: 10px;
+}
+
+.footer {
+  color: #ccc;
+  padding: 10px 0 20px;
+  border-top: 1px solid #ccc;
+}

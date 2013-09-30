@@ -4,6 +4,8 @@
 
     <%= render 'form' %>
 
-    <%= link_to 'Back', notes_path %>
+    <div class="action"><%= link_to raw("<div class='circle'><i class='glyphicon glyphicon-th-list'></i></div> Back to all notes"), root_path, class: "actionlink" %></div>
   </div>
 </div>
+
+<br />

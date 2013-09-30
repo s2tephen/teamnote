@@ -1,12 +1,14 @@
 <div class="row">
   <div class="span12">
-	<h1><%= @note.title %></h1>
+  	<h1><%= @note.title %></h1>
 
-	<div class="content">
-	  <%= simple_format(@note.content) %>
-	</div>
+  	<div class="content">
+  	  <%= simple_format(@note.content) %>
+  	</div>
 
-	<%= link_to 'Edit', edit_note_path(@note) %> |
-	<%= link_to 'Back', notes_path %>
+    <div class="action"><%= link_to raw("<div class='circle'><i class='glyphicon glyphicon-pencil'></i></div> Edit this note"), edit_note_path(@note), class: "actionlink" %></div>
+  	<div class="action"><%= link_to raw("<div class='circle'><i class='glyphicon glyphicon-th-list'></i></div> Back to all notes"), root_path, class: "actionlink" %></div>
   </div>
 </div>
+
+<br />

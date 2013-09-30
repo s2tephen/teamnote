@@ -4,7 +4,9 @@
 
     <%= render 'form' %>
 
-    <%= link_to 'Show', @note %> |
-    <%= link_to 'Back', notes_path %>
+    <div class="action"><%= link_to raw("<div class='circle'><i class='glyphicon glyphicon-eye-open'></i></div> Back to view"), @note, class: "actionlink" %></div>
+    <div class="action"><%= link_to raw("<div class='circle'><i class='glyphicon glyphicon-remove'></i></div> Delete this note"), @note, method: :delete, class: "actionlink" %></div>
   </div>
 </div>
+
+<br />

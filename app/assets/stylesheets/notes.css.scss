@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Tables
 .table {
   table-layout: fixed;
   thead {
@@ -48,6 +49,48 @@
           }
         }
       }
+    }
+  }
+}
+
+// Actions
+.action {
+  float: left;
+  margin-right: 20px;
+  .actionlink {
+    font-size: 1.2em;
+    .circle {
+      line-height: 15px;
+      .glyphicon {
+        font-size: 0.6em;
+      }
+    }
+    &:hover {
+      text-decoration: underline;
+      .circle {
+        background: #2c3e50;
+      }
+    }
+  }
+}
+
+// Forms
+.edit_note, .new_note {
+  .form-control {
+    margin-bottom: 20px;
+  }
+  textarea.form-control {
+    height: 240px;
+  }
+  label {
+    text-transform: uppercase;
+  }
+  .btn {
+    background: #1abc9c;
+    color: #fff;
+    margin-bottom: 20px;
+    &:hover {
+      background: #16a085;
     }
   }
 }
