@@ -1,0 +1,40 @@
+// table links
+.table {
+    table-layout: fixed;
+    thead {
+        tr {
+            th {
+                -webkit-user-select: none;
+                   -moz-user-select: none;
+                    -ms-user-select: none;
+                        user-select: none;
+                &.sort-desc:after {
+                    padding-left: 1em;
+                    content: "\25BC";
+                }
+                &.sort-asc:after {
+                    padding-left: 1em;
+                    content: "\25B2";
+                }
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                padding: 0;
+                a {
+                    padding: 8px;
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    color: #000;
+                    &:hover {
+                        text-decoration: none;
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}

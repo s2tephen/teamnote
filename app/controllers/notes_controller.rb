@@ -25,6 +25,7 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = Note.new(note_params)
+    @note.slug = @note.title.parameterize.truncate(100, :separator => '-', :omission => '')
 
     respond_to do |format|
       if @note.save
