@@ -1,14 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="span12">
+	<h1><%= @note.title %></h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @note.title %>
-</p>
+	<div class="content">
+	  <%= simple_format(@note.content) %>
+	</div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @note.content %>
-</p>
-
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Back', notes_path %>
+	<%= link_to 'Edit', edit_note_path(@note) %> |
+	<%= link_to 'Back', notes_path %>
+  </div>
+</div>

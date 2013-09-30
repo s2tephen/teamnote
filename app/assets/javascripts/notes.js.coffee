@@ -29,8 +29,8 @@ Table = (selector) ->
       0: ''
     cols:
       0: ''
-  table['rows'][r] = (data[r * cols...(r + 1) * cols]) for r in [0...rows]
-  table['cols'][c] = (cell for cell in data[c..] by rows) for c in [0...cols]
+  table['rows'][r] = (data[r * cols...((r + 1) * cols)]) for r in [0...rows]
+  table['cols'][c] = (cell for cell in data[c..] by cols) for c in [0...cols]
 
   self =
     # Returns the number of rows in the table. Mainly used for testing purposes.
@@ -98,6 +98,7 @@ Table = (selector) ->
 
 # initialize the table object for this page
 t = Table('#notes')
+console.log t.table()
 
 # event listener for sorting
 $('#notes th').click ->

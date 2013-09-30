@@ -8,19 +8,12 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require anim
  *= require_self
- *= require tables
+ *= require type
+ *= require nav
+ *= require notes
  */
 
- // import original bootstrap
+ // import original Bootstrap
 @import "twitter/bootstrap";
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
-
-* {
-    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    font-weight: bold;
-}

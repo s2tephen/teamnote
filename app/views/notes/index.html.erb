@@ -1,13 +1,13 @@
 <div class="row">
   <div class="span12">
-    <h1>Listing notes</h1>
+    <h1>All notes</h1>
 
     <table class="table table-striped table-hover" id="notes">
       <thead>
         <tr>
           <th>Title</th>
           <th>Length</th>
-          <th>Last updated</th>
+          <th class="sort-desc">Last updated</th>
         </tr>
       </thead>
 
@@ -16,14 +16,15 @@
           <tr>
             <td><%= link_to note.title, note %></td>
             <td><%= link_to note.content.split.size.to_s + ' words', note %></td>
-            <td><%= link_to note.updated_at.strftime("%a %b %e, %Y - %T"), note %></td>
+            <td>
+              <%= link_to note do %>
+                <%= note.updated_at.in_time_zone.strftime("%a %b %e, %Y, %I:%M %p") %>
+                <i class='glyphicon glyphicon-eye-open'></i>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
     </table>
-
-    <br>
-
-    <%= link_to 'New Note', new_note_path %>
   </div>
 </div>

@@ -25,7 +25,6 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = Note.new(note_params)
-    @note.slug = @note.title.parameterize.truncate(100, :separator => '-', :omission => '')
 
     respond_to do |format|
       if @note.save
@@ -65,7 +64,7 @@ class NotesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_note
-      @note = Note.find(params[:id])
+      @note = Note.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
