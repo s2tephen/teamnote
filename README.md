@@ -3,7 +3,7 @@
 TeamNote, a persistent collaborative note-taking application.
 
 + Full Name: Stephen Suen
-+ Github Tree URL: https://github.com/6170-fa13/ssuen_proj2/tree/1b700c785d07746dca28f893a91e893f524c9dff
++ Github Tree URL: https://github.com/6170-fa13/ssuen_proj2/tree/29f554832ff61d4baf449519aea34c671f413bba
 + Heroku URL: http://ssuen-teamnote.herokuapp.com/
 
 ## Setup
