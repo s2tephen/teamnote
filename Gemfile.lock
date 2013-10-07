@@ -133,7 +133,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  anjlab-bootstrap-rails (>= 3.0.0.0.1)
+  anjlab-bootstrap-rails (>= 3.0.0.3)
   coffee-rails (~> 4.0.0)
   devise
   friendly_id (= 5.0.0.rc2)
