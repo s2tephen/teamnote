@@ -26,5 +26,9 @@
         <% end %>
       </tbody>
     </table>
+
+    <% if @notes.empty? %>
+    You haven't written any notes. Why not <a>create one now</a>?
+    <% end %>
   </div>
 </div>
