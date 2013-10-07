@@ -37,6 +37,9 @@ gem 'simple_form'
 # Use devise for users/permissions
 gem 'devise'
 
+# Serve font assets
+gem 'font_assets'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 

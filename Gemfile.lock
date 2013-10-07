@@ -47,6 +47,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    font_assets (0.1.10)
+      rack
     friendly_id (5.0.0.rc2)
       activerecord (~> 4.0.0)
     hike (1.2.3)
@@ -136,6 +138,7 @@ DEPENDENCIES
   anjlab-bootstrap-rails (>= 3.0.0.3)
   coffee-rails (~> 4.0.0)
   devise
+  font_assets
   friendly_id (= 5.0.0.rc2)
   jbuilder (~> 1.2)
   jquery-rails
