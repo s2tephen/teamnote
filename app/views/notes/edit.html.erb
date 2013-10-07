@@ -1,11 +1,11 @@
 <div class="row">
-  <div class="span12">
+  <div class="col-sm-12 col-md-12 col-lg-12">
     <h1>Editing note</h1>
 
     <%= render 'form' %>
 
     <div class="action"><%= link_to raw("<div class='circle'><i class='glyphicon glyphicon-eye-open'></i></div> Back to view"), @note, class: "actionlink" %></div>
-    <div class="action"><%= link_to raw("<div class='circle'><i class='glyphicon glyphicon-remove'></i></div> Delete this note"), @note, method: :delete, class: "actionlink" %></div>
+    <div class="action"><%= link_to raw("<div class='circle'><i class='glyphicon glyphicon-remove'></i></div> Delete this note"), @note, method: :delete, :data => { :confirm => "Are you sure?" }, class: "actionlink" %></div>
   </div>
 </div>
 

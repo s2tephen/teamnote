@@ -76,7 +76,10 @@
 
 // Forms
 .edit_note, .new_note {
-  .form-control {
+  .help-inline {
+    color: #b94a48;
+  }
+  .control-group {
     margin-bottom: 20px;
   }
   textarea.form-control {
@@ -85,12 +88,8 @@
   label {
     text-transform: uppercase;
   }
-  .btn {
-    background: #1abc9c;
-    color: #fff;
-    margin-bottom: 20px;
-    &:hover {
-      background: #16a085;
-    }
-  }
+}
+
+abbr[title] {
+  display: none;
 }

@@ -98,7 +98,6 @@ Table = (selector) ->
 
 # initialize the table object for this page
 t = Table('#notes')
-console.log t.table()
 
 # event listener for sorting
 $('#notes th').click ->

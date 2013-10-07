@@ -1,0 +1,26 @@
+.new_user {
+  input {
+    margin-bottom: 10px;
+  }
+}
+
+.edit_user {
+  label {
+    text-transform: uppercase;
+  }
+}
+
+.checkbox {
+  .controls {
+    display: inline;
+  }
+}
+
+.forgotpw {
+  .circle {
+    position: absolute;
+    z-index: 2;
+    margin-top: 12px;
+    margin-left: 540px;
+  }
+}

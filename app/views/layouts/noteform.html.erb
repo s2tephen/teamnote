@@ -11,10 +11,10 @@
   <div class="row">
     <div class="navbar col-sm-12 col-md-12 col-lg-12">
       <a href="/" class="logo">TeamNote</a>
-      <div class="notice"><%= notice %></div>
-      <% if user_signed_in? %>
-        <%= link_to raw("<div class='circle'>+</div> Create a new note"), new_note_path, class: "navlink" %>
+      <% if @note.errors.any? %>
+        <div class="notice error"><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved.</div>
       <% end %>
+      <%= link_to raw("<div class='circle'>+</div> Create a new note"), new_note_path, class: "navlink" %>
     </div>
   </div>
   <%= yield %>

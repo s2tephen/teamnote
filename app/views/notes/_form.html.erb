@@ -1,17 +1,13 @@
-<%= simple_form_for(@note, :defaults => { :input_html => { :class => "form-control" }}) do |f| %>
-  <% if @note.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
-
-      <ul>
-      <% @note.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+<%= simple_form_for(@note, :defaults => { :input_html => { :class => 'form-control' }, :wrapper_html => { :class => 'form-group' }}) do |f| %>
+  <% if @note.errors.include?(:title) %>
+    <%= f.input :title, input_html: { id: 'inputError' }, wrapper_html: { :class => 'has-error' } %>
+  <% else %>
+    <%= f.input :title %>
   <% end %>
-
-  <%= f.input :title %>
-  <%= f.input :content %>
+  <% if @note.errors.include?(:content) %>
+    <%= f.input :content, input_html: { id: 'inputError' }, wrapper_html: { :class => 'has-error' } %>
+  <% else %>
+    <%= f.input :content %>
+  <% end %>
   <%= f.button :submit %>
 <% end %>

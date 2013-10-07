@@ -34,6 +34,9 @@ gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', require: 'bootstrap-rails'
 # Use simple_form for Bootstrap forms
 gem 'simple_form'
 
+# Use devise for users/permissions
+gem 'devise'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 

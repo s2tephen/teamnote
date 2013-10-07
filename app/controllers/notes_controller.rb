@@ -4,7 +4,7 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.all(:order => 'updated_at desc, title asc')
+    @notes = Note.where(:user_id => current_user.id).order('updated_at desc, title asc')
   end
 
   # GET /notes/1
@@ -24,14 +24,14 @@ class NotesController < ApplicationController
   # POST /notes
   # POST /notes.json
   def create
-    @note = Note.new(note_params)
+    @note = Note.new(note_params.merge({:user_id => current_user.id}))
 
     respond_to do |format|
       if @note.save
         format.html { redirect_to @note, notice: 'Note was successfully created.' }
         format.json { render action: 'show', status: :created, location: @note }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'new', :layout => 'noteform' }
         format.json { render json: @note.errors, status: :unprocessable_entity }
       end
     end
@@ -45,7 +45,7 @@ class NotesController < ApplicationController
         format.html { redirect_to @note, notice: 'Note was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render action: 'edit', :layout => 'noteform' }
         format.json { render json: @note.errors, status: :unprocessable_entity }
       end
     end
@@ -65,6 +65,7 @@ class NotesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_note
       @note = Note.friendly.find(params[:id])
+      redirect_to root_path if current_user.id != @note.user_id
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

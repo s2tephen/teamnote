@@ -1,0 +1,16 @@
+<h2>Forgot your password?</h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <%= f.input :email, :required => true, :label => false, :autofocus => true, input_html: { :class => 'form-control input-lg' }, wrapper_html: { :class => 'col-sm-4 col-md-4 col-lg-4' }, :placeholder => 'Email' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Send me reset password instructions" %>
+    <%= link_to 'Back to sign in', new_user_session_path, class: "btn" %>
+  </div>
+<% end %>

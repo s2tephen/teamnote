@@ -1,3 +1,7 @@
+* {
+  transition: all 0.35s ease;
+}
+
 body {
   border-top: 10px solid #1abc9c;
 }
@@ -27,6 +31,9 @@ body {
   margin-left: 160px;
   color: #468847;
   font-size: 1.2em;
+  &.error {
+    color: #b94a48;
+  }
 }
 
 .navlink {
@@ -56,7 +63,17 @@ body {
 }
 
 .footer {
-  color: #ccc;
+  color: #999;
   padding: 10px 0 20px;
   border-top: 1px solid #ccc;
+}
+
+.btn {
+  background: #1abc9c;
+  color: #fff;
+  margin-bottom: 20px;
+  &:hover {
+    background: #16a085;
+    color: #fff;
+  }
 }
