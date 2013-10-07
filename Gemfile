@@ -29,7 +29,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 # Use Bootstrap CSS framework
-gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', require: 'bootstrap-rails'
+gem 'anjlab-bootstrap-rails', '>= 3.0.0.0.1', require: 'bootstrap-rails'
 
 # Use simple_form for Bootstrap forms
 gem 'simple_form'
