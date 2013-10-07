@@ -28,7 +28,9 @@
     </table>
 
     <% if @notes.empty? %>
-    You haven't written any notes. Why not <a>create one now</a>?
+      <p class="noteless">
+        You haven't written any notes. Why not <%= link_to 'create one now?', new_note_path %>
+      </p>
     <% end %>
   </div>
 </div>
