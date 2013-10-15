@@ -116,3 +116,6 @@ $('#notes th').click ->
 
   # reorder rows
   $('#notes tbody').append(rows[order[i]]) for i in [0...rows.length]
+
+# activate chosen plugin
+$("#note_user_ids").chosen()

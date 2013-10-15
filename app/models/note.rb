@@ -5,7 +5,8 @@ class Note < ActiveRecord::Base
   # Do not allow empty fields.
   validates :title, :content, :presence => { :message => "* required" }
 
-  belongs_to :user
+  has_many :permissions
+  has_many :users, through: :permissions
 
   # Bulk-generates notes with lorem ipsum.
   # Assumes that n is an integer.
@@ -16,8 +17,10 @@ class Note < ActiveRecord::Base
     n.times do
       body = LoremIpsum.generate
       head = body.split(/\.|,/).last.truncate(40, :separator => ' ', :omission => '')[1..-1].capitalize
-      note = Note.new(:title => head, :content => body, :user_id => 1 )
+      note = Note.new(:title => head, :content => body)
       note.save
+      permission = Permission.new(:user_id => 1, :note_id => note.id)
+      permission.save
     end
   end
 end

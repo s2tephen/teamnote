@@ -4,7 +4,7 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.where(:user_id => current_user.id).order('updated_at desc, title asc')
+    @notes = current_user.notes.order('updated_at desc, title asc')
   end
 
   # GET /notes/1
@@ -24,10 +24,12 @@ class NotesController < ApplicationController
   # POST /notes
   # POST /notes.json
   def create
-    @note = Note.new(note_params.merge({:user_id => current_user.id}))
+    @note = Note.new(note_params)
 
     respond_to do |format|
       if @note.save
+        p = Permission.new(:user_id => current_user.id, :note_id => @note.id, :access => 2)
+        p.save
         format.html { redirect_to @note, notice: 'Note was successfully created.' }
         format.json { render action: 'show', status: :created, location: @note }
       else
@@ -65,7 +67,7 @@ class NotesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_note
       @note = Note.friendly.find(params[:id])
-      redirect_to root_path if current_user.id != @note.user_id
+      redirect_to root_path unless @note.users.include?(current_user)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
