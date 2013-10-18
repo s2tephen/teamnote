@@ -9,6 +9,6 @@
   <% else %>
     <%= f.input :content %>
   <% end %>
-  <%= f.association :users, label: 'Share with...', label_method: :email %>
+  <%= f.association :users, collection: @users, label: 'Share with...', label_method: :email %>
   <%= f.button :submit %>
 <% end %>

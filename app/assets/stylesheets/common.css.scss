@@ -68,6 +68,12 @@ body {
   color: #999;
   padding: 10px 0 20px;
   border-top: 1px solid #ccc;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+    .user-details {
+      float: none !important;
+    }
+  }
 }
 
 .btn {

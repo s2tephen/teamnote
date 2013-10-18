@@ -118,4 +118,5 @@ $('#notes th').click ->
   $('#notes tbody').append(rows[order[i]]) for i in [0...rows.length]
 
 # activate chosen plugin
-$("#note_user_ids").chosen()
+$(document).ready ->
+  $("#note_user_ids").chosen().css('visibility', 'visible');

@@ -15,21 +15,24 @@ class NotesController < ApplicationController
   # GET /notes/new
   def new
     @note = Note.new
+    @users = User.where.not(id: current_user.id)
   end
 
   # GET /notes/1/edit
   def edit
+    @users = User.where.not(id: current_user.id)
   end
 
   # POST /notes
   # POST /notes.json
   def create
-    @note = Note.new(note_params)
+    users = note_params['user_ids'][1..-1]
+    @note = Note.new(note_params.except('user_ids'))
 
     respond_to do |format|
       if @note.save
-        p = Permission.new(:user_id => current_user.id, :note_id => @note.id, :access => 2)
-        p.save
+        Permission.create(:user_id => current_user.id, :note_id => @note.id)
+        users.each { |user| Permission.where(:user_id => user, :note_id => @note.id).first_or_create }
         format.html { redirect_to @note, notice: 'Note was successfully created.' }
         format.json { render action: 'show', status: :created, location: @note }
       else
@@ -42,8 +45,14 @@ class NotesController < ApplicationController
   # PATCH/PUT /notes/1
   # PATCH/PUT /notes/1.json
   def update
+    users = note_params['user_ids'][1..-1]
+    users << current_user.id
+    permissions = Permission.where(:note_id => @note.id).where.not(:user_id => users)
+
     respond_to do |format|
-      if @note.update(note_params)
+      if @note.update(note_params.except('user_ids'))
+        permissions.each { |p| Permission.destroy(p.id) }
+        users.each { |user| Permission.where(:user_id => user, :note_id => @note.id).first_or_create }
         format.html { redirect_to @note, notice: 'Note was successfully updated.' }
         format.json { head :no_content }
       else
@@ -72,6 +81,6 @@ class NotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def note_params
-      params.require(:note).permit(:title, :content)
+      params.require(:note).permit(:title, :content, :user_ids => [])
     end
 end

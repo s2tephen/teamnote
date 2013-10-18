@@ -7,7 +7,8 @@
         <tr>
           <th>Title</th>
           <th>Length</th>
-          <th class="sort-desc">Last updated</th>
+          <th class="sort-desc hidden-xs">Last updated</th>
+          <th class="sort-desc visible-xs">Updated</th>
         </tr>
       </thead>
 
@@ -18,8 +19,8 @@
             <td><%= link_to note.content.split.size.to_s + ' words', note %></td>
             <td>
               <%= link_to note do %>
-                <%= note.updated_at.in_time_zone.strftime("%a %b %e, %Y, %I:%M %p") %>
-                <i class='glyphicon glyphicon-eye-open'></i>
+                <span class="hidden-xs"><%= note.updated_at.in_time_zone.strftime("%a %b %e, %Y, %I:%M %p") %></span>
+                <span class="visible-xs"><%= note.updated_at.in_time_zone.strftime("%m/%e/%y") %></span>
               <% end %>
             </td>
           </tr>

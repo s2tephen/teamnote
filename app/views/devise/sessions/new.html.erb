@@ -5,11 +5,11 @@
     <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
       <div class="form-inputs">
         <div class="row">
-          <%= f.input :email, :required => false, :label => false, :autofocus => true, input_html: { :class => 'form-control input-lg' }, wrapper_html: { :class => 'col-sm-12 col-md-12 col-lg-12' }, :placeholder => 'Email' %>
+          <%= f.input :email, :required => false, :label => false, input_html: { :class => 'form-control input-lg' }, wrapper_html: { :class => 'col-sm-12 col-md-12 col-lg-12' }, :placeholder => 'Email' %>
         </div>
         <div class="row">
           <%= link_to raw("<div class='circle'>?</div>"), new_password_path(resource_name), class: "actionlink forgotpw" %>
-          <%= f.input :password, :required => false, :label => false, :autofocus => true, input_html: { :class => 'form-control input-lg' }, wrapper_html: { :class => 'col-sm-12 col-md-12 col-lg-12' }, :placeholder => 'Password' %>
+          <%= f.input :password, :required => false, :label => false, input_html: { :class => 'form-control input-lg' }, wrapper_html: { :class => 'col-sm-12 col-md-12 col-lg-12' }, :placeholder => 'Password' %>
         </div>
       </div>
 
@@ -28,11 +28,11 @@
     <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
       <div class="form-inputs">
         <div class="row">
-          <%= f.input :email, :required => true, :label => false, :autofocus => true, input_html: { :class => 'form-control input-lg' }, wrapper_html: { :class => 'col-sm-12 col-md-12 col-lg-12' }, :placeholder => 'Email' %>
+          <%= f.input :email, :required => true, :label => false, input_html: { :class => 'form-control input-lg' }, wrapper_html: { :class => 'col-sm-12 col-md-12 col-lg-12' }, :placeholder => 'Email' %>
         </div>
         <div class="row">
-          <%= f.input :password, :required => true, :label => false, :autofocus => true, input_html: { :class => 'form-control input-lg' }, wrapper_html: { :class => 'col-sm-6 col-md-6 col-lg-6' }, :placeholder => 'Password' %>
-          <%= f.input :password_confirmation, :required => true, :label => false, :autofocus => true, input_html: { :class => 'form-control input-lg' }, wrapper_html: { :class => 'col-sm-6 col-md-6 col-lg-6' }, :placeholder => 'Confirm password' %>
+          <%= f.input :password, :required => true, :label => false, input_html: { :class => 'form-control input-lg' }, wrapper_html: { :class => 'col-sm-6 col-md-6 col-lg-6' }, :placeholder => 'Password' %>
+          <%= f.input :password_confirmation, :required => true, :label => false, input_html: { :class => 'form-control input-lg' }, wrapper_html: { :class => 'col-sm-6 col-md-6 col-lg-6' }, :placeholder => 'Confirm password' %>
         </div>
       </div>
 

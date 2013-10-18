@@ -42,11 +42,6 @@
             text-decoration: none;
             color: #000;
           }
-          .glyphicon {
-            display: none;
-            margin-left: 8px;
-            top: 3px;
-          }
         }
       }
     }
@@ -100,6 +95,10 @@ abbr[title] {
   a {
     font-weight: bold;
   }
+}
+
+#note_user_ids {
+  visibility: hidden;
 }
 
 .chosen-container-multi {

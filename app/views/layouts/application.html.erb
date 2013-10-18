@@ -3,6 +3,7 @@
 <head>
   <title>TeamNote</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -21,14 +22,14 @@
 
   <div class="row">
     <div class="footer col-sm-12 col-md-12 col-lg-12">
-      &copy; 2013 TeamNote
       <% if user_signed_in? %>
-        <div class="pull-right">
+        <div class="user-details pull-right">
           Logged in as <strong><%= current_user.email %></strong> -
           <%= link_to 'Edit profile', edit_user_registration_path %> -
           <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         </div>
       <% end %>
+      &copy; 2013 TeamNote
     </div>
   </div>
 </div>

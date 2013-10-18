@@ -11,17 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015094031) do
+ActiveRecord::Schema.define(version: 20131018022707) do
 
   create_table "notes", force: true do |t|
     t.string   "title"
     t.text     "content"
+    t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "slug"
   end
 
-  create_table "permissions", id: false, force: true do |t|
+  create_table "permissions", force: true do |t|
     t.integer "note_id"
     t.integer "user_id"
   end
