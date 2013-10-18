@@ -54,9 +54,6 @@ end
 # Create readable slugs
 gem 'friendly_id', '5.0.0.rc2'
 
-# Lorem ipsum to bulk-generate notes
-gem 'lorem-ipsum-me'
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
