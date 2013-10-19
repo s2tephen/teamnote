@@ -52,7 +52,12 @@ class NotesController < ApplicationController
     respond_to do |format|
       if @note.update(note_params.except('user_ids'))
         unless permissions.empty?
-          permissions.each { |p| Permission.destroy(p.id) }
+          permissions.each do |p|
+            puts p
+            puts p.id
+            puts Permission.find(p.id)
+            Permission.destroy(p.id)
+          end
         end
         users.each { |user| Permission.where(:user_id => user, :note_id => @note.id).first_or_create }
         format.html { redirect_to @note, notice: 'Note was successfully updated.' }
