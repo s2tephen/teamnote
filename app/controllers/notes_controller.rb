@@ -47,19 +47,14 @@ class NotesController < ApplicationController
   def update
     users = note_params['user_ids'][1..-1]
     users << current_user.id
-    permissions = Permission.where(:note_id => @note.id).where.not(:user_id => users)
+    permissions = Permission.where(:note_id => @note.id)
 
     respond_to do |format|
       if @note.update(note_params.except('user_ids'))
         unless permissions.empty?
-          permissions.each do |p|
-            puts p
-            puts p.id
-            puts Permission.find(p.id)
-            Permission.destroy(p.id)
-          end
+          permissions.each { |p| Permission.destroy(p.id) }
         end
-        users.each { |user| Permission.where(:user_id => user, :note_id => @note.id).first_or_create }
+        users.each { |user| Permission.where(:user_id => user, :note_id => @note.id).create }
         format.html { redirect_to @note, notice: 'Note was successfully updated.' }
         format.json { head :no_content }
       else
